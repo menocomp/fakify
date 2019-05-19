@@ -1,0 +1,24 @@
+{
+  "name": "fakify",
+  "version": "1.0.0",
+  "description": "tiny library used to stub, fake or spy on default exported functions in Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/menocomp/fakify.git"
+  },
+  "keywords": [
+    "stub",
+    "sinon",
+    "default export"
+  ],
+  "author": "Mina Luke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/menocomp/fakify/issues"
+  },
+  "homepage": "https://github.com/menocomp/fakify#readme"
+}
