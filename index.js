@@ -1,15 +1,23 @@
+const path = require("path");
+const callsite = require("callsite");
+
 const fakify = (moduleRelativePath, stubs) => {
-  if (require.cache[require.resolve(moduleRelativePath)]) {
-    delete require.cache[require.resolve(moduleRelativePath)];
+  const stack = callsite();
+  const requester = stack[1].getFileName();
+
+  const dirName = `${path.dirname(requester)}/`;
+
+  if (require.cache[require.resolve(dirName + moduleRelativePath)]) {
+    delete require.cache[require.resolve(dirName + moduleRelativePath)];
   }
 
   Object.keys(stubs).forEach(dependencyRelativePath => {
-    require.cache[require.resolve(dependencyRelativePath)] = {
+    require.cache[require.resolve(dirName + dependencyRelativePath)] = {
       exports: stubs[dependencyRelativePath]
     };
   });
 
-  return require(moduleRelativePath);
+  return require(dirName + moduleRelativePath);
 };
 
 module.exports = fakify;

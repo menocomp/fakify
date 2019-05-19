@@ -1,6 +1,6 @@
 {
   "name": "fakify",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "tiny library used to stub, fake or spy on default exported functions in Javascript",
   "main": "index.js",
   "scripts": {
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/menocomp/fakify/issues"
   },
-  "homepage": "https://github.com/menocomp/fakify#readme"
+  "homepage": "https://github.com/menocomp/fakify#readme",
+  "dependencies": {
+    "callsite": "^1.0.0"
+  }
 }
