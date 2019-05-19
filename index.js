@@ -1,4 +1,4 @@
-const fakeDefaultExport = (moduleRelativePath, stubs) => {
+const fakify = (moduleRelativePath, stubs) => {
   if (require.cache[require.resolve(moduleRelativePath)]) {
     delete require.cache[require.resolve(moduleRelativePath)];
   }
@@ -11,3 +11,5 @@ const fakeDefaultExport = (moduleRelativePath, stubs) => {
 
   return require(moduleRelativePath);
 };
+
+module.exports = fakify;

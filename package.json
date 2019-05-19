@@ -1,6 +1,6 @@
 {
   "name": "fakify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "tiny library used to stub, fake or spy on default exported functions in Javascript",
   "main": "index.js",
   "scripts": {
